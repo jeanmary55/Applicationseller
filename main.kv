@@ -1,0 +1,66 @@
+#: include kv/homepage.kv
+#: include kv/ajustepage.kv
+#: import utils kivy.utils
+#: include kv/adicionarvendapage.kv
+#: include kv/verlistavendedorespage.kv
+#: include kv/mudarperfilpage.kv
+#: include kv/acompanharvendedorpage.kv
+#: include kv/vertodasvendaspage.kv
+#: include kv/paginalogin.kv
+#: include kv/outrovendedorpage.kv
+
+
+FloatLayout:
+  canvas:
+    Color:
+      rgb: utils.get_color_from_hex("#001824")
+    Rectangle:
+      size:self.size
+      pos:self.pos
+  
+  Image:
+    pos_hint: {"right": 1, "top":0.9}
+    size_hint: 1, 0.2
+    source: "icones/hash2.png"
+    id: foto_perfil
+
+  ScreenManager:
+    pos_hint: {"right": 1, "top":0.7}
+    size_hint: 1, 0.7
+    id: screen-manager 
+
+    Paginalogin:
+      name: "paginalogin"
+      id:paginalogin
+
+    Homepage:
+      name: "homepage"
+      id: homepage
+
+    Ajustepage:
+      name: "ajustepage"
+      id: ajustepage
+
+    Adicionarvendapage: 
+      name: "adicionarvendapage"
+      id: adicionarvendapage
+    
+    Verlistavendedorespage:
+      name: "verlistavendedorespage"
+      id: verlistavendedorespage
+
+    Mudarperfilpage
+      name: "mudarperfilpage"
+      id: mudarperfilpage
+    
+    Acompanharvendedorpage:
+      name: "acompanharvendedorpage"
+      id: acompanharvendedorpage
+    
+    Vertodasvendaspage:
+      name: "vertodasvendaspage"
+      id: vertodasvendaspage
+    
+    Outrovendedorpage:
+      name: "outrovendedorpage"
+      id: outrovendedorpage

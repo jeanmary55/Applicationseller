@@ -1,0 +1,44 @@
+<Mudarperfilpage>:
+  FloatLayout:
+    canvas:
+      Rectangle:
+        size:self.size
+        pos:self.pos
+        source: "icones/bg1.png"
+    
+    Label:
+      
+      pos_hint: {"right": 0.85, "top":0.95}
+      size_hint: 0.7, 0.2
+      text: "Mudar sua foto de perfil"
+      bold: True
+
+    
+    ScrollView:
+      pos_hint: {"right": 0.9, "top": 0.7}
+      size_hint: 0.8, 0.58
+      GridLayout:
+        cols: 3
+        size_hint_y: None
+        spacing:5,2
+        height: self.minimum_height
+        row_default_height: "90dp"
+        row_force_default: True
+        id: lista_foto_perfil
+
+
+    FloatLayout:
+      pos_hint: {"right": 1, "top":0.12}
+      size_hint: 1, 0.12
+      canvas:
+        Color:
+          rgb: utils.get_color_from_hex("#001824")
+        Rectangle:
+          size:self.size
+          pos:self.pos
+      
+      ImageButton:
+        pos_hint: {"right": 0.2, "top":0.9}
+        size_hint: 0.2, 0.8
+        source: "icones/voltar.png"
+        on_release: app.mudar_pagina("ajustepage")
